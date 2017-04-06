@@ -1,0 +1,159 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{multirow}
+\usepackage[x11names,table]{xcolor}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{url}
+
+\author{carla}
+\title{tablas}
+\definecolor{db}{RGB}{0,128,128}
+\definecolor{dh}{RGB}{128,128,0} %dh
+
+
+
+\begin{document}
+
+
+	\begin{tabular}{cccc}
+
+Primera & Segunda & Tercera & Cuarta 	\\\hline
+A 		& B 	& 			& C 		\\\hline
+		& D 	& E 		& F 		\\\hline
+G 		& 		& 			& H
+	\end{tabular}
+
+
+	\begin{center}
+	\begin{tabular}{ | l | l | l | p{5cm} |}
+% p{5cm}: Quiere decir que me escriba en un parrafo de 5cm
+\hline
+Day & Min Temp & Max Temp & Summary \\ \hline
+ Monday & \(11\)C & \(22\)C & A clear day with lots of sunshine.
+However, the strong breeze will bring down the temperatures. \\ \hline
+Tuesday & \(9\)C & \(19\)C & Cloudy with rain, across many northern regions. Clear spells
+across most of Scotland and Northern Ireland,
+but rain reaching the far northwest. \\ \hline
+Wednesday & \(10\)C & \(21\)C & Rain will still linger for the morning.
+Conditions will improve by early afternoon and continue
+throughout the evening. \\
+	\hline
+	\end{tabular}
+	\end{center}
+
+\begin{center}
+\begin{tabular}{|r @{-pablo-} l|} %Para alinear y poner lo que quiero eque este entre la mitad {.}
+\hline
+\(1\) & \(4\) \\ \hline
+\(2\) & \(54\) \\ \hline
+\(1\) & \(7890\) \\ \hline
+\end{tabular}
+\end{center}
+
+
+\begin{tabular}{|l|l|c|}\hline
+\multicolumn{3}{|c|}{PART\'{I}CULAS AT\'{O}MICAS ELEMENTALES} \\
+\hline \hline
+\textsf{Part\'{i}cula} & \textsf{Descubridor} & \textsf{A\~{n}o del descubrimiento} \\
+\hline
+Electr\'{o}n & Joseph J. Thomson* & 1897 \\
+\hline
+Prot\'{o}n & James Rutherford & 1919 \\
+\hline
+Neutr\'{o}n & James Chadwick* & 1932 \\
+\hline
+Positr\'{o}n & Carl D. Anderson* & 1932 \\
+\hline
+\multicolumn{2}{l}{\small *Recibi\'{o} el premio Nobel}
+\end{tabular}
+
+
+\begin{center}
+\begin{tabular}{ |l|l|l| }
+\hline
+\multicolumn{3}{ |c| }{Team sheet} \\
+\hline
+Goalkeeper & GK & Paul Robinson \\ \hline
+\multirow{4}{*}{Defenders} & LB & Lucus Radebe \\ %\multirow: para combinar filas
+& DC & Michael Duburry \\
+& DC & Dominic Matteo \\
+& RB & Didier Domi \\
+\hline
+\multirow{3}{*}{Midfielders} & \multirow{3}{*}{MC} & David Batty \\
+& & Eirik Bakke \\
+& & Jody Morris \\
+\hline
+Forward & FW & Jamie McMaster \\ \hline
+\multirow{2}{*}{Strikers} & \multirow{2}{*}{ST} & Alan Smith \\
+& & Mark Viduka \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{table}[h]
+\centering
+% 
+
+
+\begin{tabular}{|c|c|c|} \hline
+\(p\) & \(q\) & \(p \to q\) \\
+\hline
+0 & 0 & 1 \\
+0 & 1 & 1 \\
+\cline{1-2}
+1 & 0 & 0 \\
+1 & 1 & 1 \\
+\hline
+\end{tabular}
+\caption{Tabla de verdad para \(p \to q\).}
+\label{tabla:01}
+\end{table}
+
+\begin{center}
+\begin{tabular}{| >{\columncolor{db!20}} c | c | >{\color{magenta}} c |}
+\hline
+\rowcolor{db}
+\color{yellow!30!white} \textbf{Temperatura} &
+\color{yellow!30!white} \textbf{Tiempo} &
+\color{yellow!30!white} \textbf{Total} \\ \hline
+1 & \(245 \pm 5.5\) & 3 \\ \hline
+2 & \(260 \pm 5.5\) & \cellcolor{white!70!dh}\color{dh}{8} \\ \hline % para pintar una sola
+	celda
+3 & \(275 \pm 5.5\) & 8 \\ \hline
+4 & \(287 \pm 5.5\) & 8 \\ \hline
+\end{tabular}
+\end{center}
+
+\begin{longtable}{lll}
+\caption{Lista de Estudiantes} \\
+\toprule
+\textbf{Nombre} & \textbf{Carrera} & \textbf{Correo electrónico} \\
+\midrule
+\endfirsthead
+%
+\multicolumn{3}{l}{\footnotesize Viene de la página anterior} \\
+\toprule
+\textbf{Nombre} & \textbf{Carrera} & \textbf{Correo Electrónico} \\ \midrule
+\endhead
+\bottomrule \multicolumn{3}{r}{\footnotesize Continua en la siguiente página}
+\endfoot
+\bottomrule
+\endlastfoot
+%
+Milton Torres & Matemática & \url{mate6666oz@hotmail.com} \\
+\end{longtable}
+
+
+
+
+\end{document}
+
+
+
